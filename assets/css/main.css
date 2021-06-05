@@ -1,3 +1,7 @@
+.main {
+  overflow: hidden;
+}
+
 .header {
   height: var(--header-height);
   background-image: linear-gradient(0, #fe6433, #f53e2d);
@@ -513,7 +517,8 @@
 }
 
 .header__mobile-search {
-  padding: 0 12px;
+  padding: 0 12px 0 0;
+  display: none;
 }
 
 .header__mobile-search-icon {
@@ -534,6 +539,10 @@
 
 .header__logo-img {
   width: 150px;
+}
+
+.header__search-checkbox:checked ~ .header__search {
+  display: flex;
 }
 
 .header__search {
@@ -724,6 +733,7 @@
   display: inline-block;
   padding: 0 12px;
   cursor: pointer;
+  --webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-wrap:hover .header__cart-list {
@@ -971,6 +981,66 @@
 .category-item__link:hover {
   right: -4px;
   color: var(--primary-color);
+}
+
+/* mobile-category */
+.mobile-category {
+  display: none;
+}
+
+.mobile-category__list {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.mobile-category__list::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-category__item {
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+.mobile-category__item:last-child {
+  margin-right: 0;
+}
+
+.mobile-category__item:nth-of-type(3n + 1) .mobile-category__link {
+  background-color: #87afd8;
+}
+
+.mobile-category__item:nth-of-type(3n + 2) .mobile-category__link {
+  background-color: #76c9bd;
+}
+
+.mobile-category__item:nth-of-type(3n + 3) .mobile-category__link {
+  background-color: #88cf81;
+}
+
+.mobile-category__link {
+  --line-height: 2rem;
+  text-decoration: none;
+  color: var(--while-color);
+  font-size: 1.4rem;
+  line-height: var(--line-height);
+  height: calc(var(--line-height) * 2);
+  overflow: hidden;
+  text-align: center;
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  width: 110px;
+  border-radius: 3px;
+  font-weight: 300;
+  user-select: none;
+  --webkit-user-select: none;
+  padding: 0 6px;
 }
 
 /* Home sort + filter */
@@ -1234,6 +1304,7 @@ i.home-product-item__like-icon-fill {
 /* pagination */
 .home-product__pagination {
   margin: 48px 0 32px 0;
+  padding-left: 0;
 }
 
 /* Footer */
