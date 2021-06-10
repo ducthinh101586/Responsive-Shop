@@ -1,10 +1,5 @@
 /* Mobile & Tablet */
 @media (max-width: 1023px) {
-  :root {
-    --header-height: 68px;
-    --navbar-height: 0px;
-  }
-
   .hide-on-mobile-tablet {
     display: none;
   }
@@ -102,6 +97,11 @@
     display: none;
   }
 
+  :root {
+    --header-height: 68px;
+    --navbar-height: 0px;
+  }
+
   .header__cart {
     width: 80px;
     text-align: right;
@@ -120,6 +120,11 @@
 @media (max-width: 739px) {
   .hide-on-mobile {
     display: none;
+  }
+
+  :root {
+    --header-height: 54px;
+    --navbar-height: 0px;
   }
 
   .header-with-search {
@@ -188,5 +193,26 @@
 
   .footer__content {
     padding: 0 16px;
+  }
+
+  .footer__heading {
+    text-align: center;
+  }
+  .footer__download,
+  .footer__item-link {
+    justify-content: center;
+  }
+
+  .footer__download-apps {
+    flex: unset;
+  }
+
+  .footer__download-apps-link {
+    display: block;
+    padding: 6px 8px;
+  }
+
+  .header__cart-item {
+    padding: 0 12px;
   }
 }
